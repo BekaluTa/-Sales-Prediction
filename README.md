@@ -1,2 +1,3 @@
-# Sales Prediction on Phramaticual Data
+# Pharmaceutical Sales Prediction across
+multiple stores
 
