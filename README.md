@@ -1,4 +1,4 @@
-# Pharmaceutical Sales Prediction across multiple stores
-# Tasks on this Project Includes
-# EDA
+# Pharmaceutical Sales Prediction Across Multiple Stores
+# Tasks 1
+# Explanatory Data Analysis
 
