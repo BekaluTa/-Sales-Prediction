@@ -1,30 +1,33 @@
-import sys
-sys.path.insert(0, './scripts')
-from Dashboard import EDA, Model
-from Dashboard import MultiApp
+
 import streamlit as st
+from PIL import Image
+from streamlit_option_menu import option_menu
 
-# import your app modules here
+from Dashboard.home import home_app
+from Dashboard.overview import overview_app
+from Dashboard.predict import prdict_app
 
-st.set_page_config(
-    page_title="Rossmann Pharmaceuticals Sales Prediction Across Multiple Stores", layout="wide")
+st.set_page_config(page_title="Telcom Data Analysis")
 
-app = MultiApp()
+slected = option_menu(
+    menu_title=None,
+    options=["Home", "Overview", "Predict"],
+    icons=["house", "globe2", "app"],
+    menu_icon="cast",
+    orientation="horizontal"
+)
+styles = {
+    "container": {"padding": "0!important", "background-color": "#fafafa"},
+    "icon": {"color": "orange", "font-size": "25px"},
+    "nav-link": {"font-size": "25px", "text-align": "left", "margin": "0px", "--hover-color": "#eee"},
+    "nav-link-selected": {"background-color": "green"},
+}
+st.title("Telecom Data Analysis")
 
 
-st.sidebar.markdown("""
-# Rossmann Pharmaceuticals Store Sales
-### Multi-Page App
-This multi-page app is using the [streamlit-multiapps](https://github.com/upraneelnihar/streamlit-multiapps) framework developed by [Praneel Nihar](https://medium.com/@u.praneel.nihar). Also check out his [Medium article](https://medium.com/@u.praneel.nihar/building-multi-page-web-app-using-streamlit-7a40d55fa5b4).
-### Modifications
-\t- Page Folder Based Access
-\t- Presentation changed to SideBar
-""")
-
-# Add all your application here
-app.add_app("Data Exploration and Analysis, PART I", EDA.app)
-app.add_app("Data Exploration and Analysis, PART II", EDA2.app)
-app.add_app("Sales Prediciton", model_implementation.app)
-
-# The main app
-app.run()
+if slected == "Home":
+    home_app()
+elif slected == "Overview":
+    overview_app()
+else:
+    prdict_app()
