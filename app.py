@@ -7,7 +7,7 @@ from Dashboard.home import home_app
 from Dashboard.overview import overview_app
 from Dashboard.predict import prdict_app
 
-st.set_page_config(page_title="Telcom Data Analysis")
+st.set_page_config(page_title="Sales Prediction on Pharmacy Data")
 
 slected = option_menu(
     menu_title=None,
@@ -22,7 +22,7 @@ styles = {
     "nav-link": {"font-size": "25px", "text-align": "left", "margin": "0px", "--hover-color": "#eee"},
     "nav-link-selected": {"background-color": "green"},
 }
-st.title("Telecom Data Analysis")
+st.title("Sales Data Prediction")
 
 
 if slected == "Home":

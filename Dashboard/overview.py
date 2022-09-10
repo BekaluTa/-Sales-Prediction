@@ -18,11 +18,11 @@ def overview_app():
     number = st.number_input("Enter the number of rows and press enter: ", min_value=None, max_value=None, value=0,
                              step=None, format=None, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False)
 
-    df = pd.read_csv('./Data/Task1.csv', nrows=number)
+    df = pd.read_csv('./Data/train.csv', nrows=number)
     st.write(df)
 
     st.header("Day of the Week")
-    top_df = pd.read_csv('./Data/test.csv')
+    top_df = pd.read_csv('./Data/train.csv')
 
     fig = px.bar(top_df, x='Day of the Week', y='count', height=500)
     st.plotly_chart(fig)
